@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.input-container {
+  margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-item {
+  margin-bottom: 20px;
+}
+
+.item-text {
+  font-weight: bold;
+}
+
+.vote-buttons {
+  margin: 10px 0;
+}
+
+.vote-buttons li {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 0;
+}
+
+.vote-result {
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+
+.vote-result ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.item-date {
+  font-size: 12px;
+  color: #777;
 }

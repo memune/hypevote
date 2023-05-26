@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 
 function App() {
   const [inputValue, setInputValue] = useState('');
@@ -50,34 +51,33 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app">
       <h2>Hype Vote</h2>
-      <h3>이거 요즘 뜨는 거 맞아? 인정? 노인정?</h3>
-      <div>
+      <div className="input-container">
         <input type="text" value={inputValue} onChange={handleInputChange} />
         <button onClick={handleAddItem}>추가</button>
       </div>
-      <ul>
+      <ul className="list">
         {listItems.map((item, itemIndex) => (
-          <li key={itemIndex}>
-            {item.text}
-            <ul>
+          <li className="list-item" key={itemIndex}>
+            <span className="item-text">{item.text}</span>
+            <ul className="vote-buttons">
               {!item.voted && (
                 <>
                   <li>
-                    <button onClick={() => handleVote(itemIndex, 0)}>인정</button> - {item.votes[0]} 표
+                    <button onClick={() => handleVote(itemIndex, 0)}>인정</button>
                   </li>
                   <li>
-                    <button onClick={() => handleVote(itemIndex, 1)}>노인정</button> - {item.votes[1]} 표
+                    <button onClick={() => handleVote(itemIndex, 1)}>노인정</button>
                   </li>
                   <li>
-                    <button onClick={() => handleVote(itemIndex, 2)}>몰랐음</button> - {item.votes[2]} 표
+                    <button onClick={() => handleVote(itemIndex, 2)}>몰랐음</button>
                   </li>
                 </>
               )}
             </ul>
             {item.voted && (
-              <>
+              <div className="vote-result">
                 <p>투표 수:</p>
                 <ul>
                   <li>인정 - {item.votes[0]} 표</li>
@@ -85,9 +85,9 @@ function App() {
                   <li>몰랐음 - {item.votes[2]} 표</li>
                 </ul>
                 <p>총 점수: {calculateTotalScore(item.votes)}</p>
-              </>
+              </div>
             )}
-            <p>등록일: {item.date}</p>
+            <p className="item-date">등록일: {item.date}</p>
           </li>
         ))}
       </ul>
