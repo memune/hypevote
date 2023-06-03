@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="app">
-      <h2>Hype Vote</h2>
+      <h2>Hype Vote - 이거 나만 몰랐어?</h2>
       <div className="input-container">
         <input type="text" value={inputValue} onChange={handleInputChange} />
         <button onClick={handleAddItem}>추가</button>
